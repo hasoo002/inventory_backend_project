@@ -1,12 +1,11 @@
 const { Pool } = require('pg');
+require('dotenv').config();
 
-// Hardcode connection details directly to fix the issue
 const pool = new Pool({
-  host: 'localhost',
-  port: 5432,
-  database: 'inventory_db',
-  user: 'postgres',
-  password: 'admin123',
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false  // Required for Render PostgreSQL
+  }
 });
 
 pool.connect((err, client, release) => {
