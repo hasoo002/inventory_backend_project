@@ -3,7 +3,7 @@ require('dotenv').config();
 const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY;
 
-const callAI = async (systemPrompt, userMessage, model = 'google/gemma-3-4b-it:free') => {
+const callAI = async (systemPrompt, userMessage, model = 'mistralai/mistral-7b-instruct:free') => {
   const response = await fetch(OPENROUTER_API_URL, {
     method: 'POST',
     headers: {
