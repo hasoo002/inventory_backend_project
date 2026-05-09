@@ -1,9 +1,10 @@
 require('dotenv').config();
 
 const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
-const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY || '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';
+const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY || 'sk-or-v1-de61289ce9008d4907342705869a4c5e447sk-or-v1-3c7eda27017573244f5eadcd1ca727c4bfbdf66c52c6da3af9deb47860ad777f';
+';
 
-const callAI = async (systemPrompt, userMessage, model = 'meta-llama/llama-3.2-3b-instruct:free') => {  const response = await fetch(OPENROUTER_API_URL, {
+const callAI = async (systemPrompt, userMessage, model = 'google/gemma-3-4b-it:free') => {  const response = await fetch(OPENROUTER_API_URL, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${OPENROUTER_KEY}`,
